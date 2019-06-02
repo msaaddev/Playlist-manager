@@ -12,6 +12,11 @@ protected:
 
 public:
     playList();
+    void AddSong(const Song &s);
+    bool DeleteSong(const Song &s);
+    void ShowAll() const;
+    void play(int num=1);
+    void ShowStatus() const;
 
 };
 
