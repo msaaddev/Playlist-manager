@@ -1,5 +1,5 @@
 #include <iostream>
-#include "song.h"
+#include "song.cpp"
 #include <cstring>
 using namespace std;
 
@@ -25,12 +25,12 @@ playList :: playList( )
     size = 2;
 }
 
-void playList :: AddSong ( songs )
+void playList :: AddSong ( const Song &s )
 {
 
 }
 
-bool playList :: DeleteSong ( songs )
+bool playList :: DeleteSong ( const Song &s )
 {
 
 }
