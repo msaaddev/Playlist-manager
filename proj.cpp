@@ -7,7 +7,7 @@ class playList
 {
 protected:
 
-    int size;
+    int size, noOfSongs, currentSongIndex;
     Song *songs = new Song[size];
 
 public:
@@ -38,6 +38,18 @@ bool playList :: DeleteSong ( const Song &s )
 void playList :: ShowAll ( ) const
 {
 
+}
+
+void playList :: play ( int num )
+{
+
+}
+
+void playList:: ShowStatus ( ) const
+{
+    cout << "Size of the song array: " << size << endl;
+    cout << "No of Songs in the array: " << noOfSongs << endl;
+    cout << "Current song index in array: " << currentSongIndex << endl;
 }
 
 int main()
