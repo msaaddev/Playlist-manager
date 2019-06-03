@@ -18,6 +18,7 @@ public:
     void ShowAll ( ) const;
     void play ( int num = 1 );
     void ShowStatus ( ) const;
+    void doublesize ( );
 };
 
 playList :: playList( )
@@ -43,6 +44,21 @@ void playList :: ShowAll ( ) const
 void playList :: play ( int num )
 {
 
+}
+
+void playList::doublesize ()
+{
+    if (size == noOfSongs)
+    {
+        size = size*=2;
+    }
+    else if (noOfSongs < (size/2))
+    {
+        if(size != 2)
+        {
+            size/=2;
+        }
+    }
 }
 
 void playList:: ShowStatus ( ) const
