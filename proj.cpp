@@ -5,7 +5,7 @@ using namespace std;
 
 class playList
 {
-protected:
+private:
 
     int size, noOfSongs, currentSongIndex;
     Song *songs = new Song[size];
