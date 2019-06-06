@@ -68,6 +68,11 @@ bool playList ::DeleteSong(const Song &s)
 
 void playList ::ShowAll() const
 {
+    for (int i = 0; i < size; i++)
+    {
+        cout << PlayList[i];
+    }
+
 }
 
 void playList ::play(int num)
