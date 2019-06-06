@@ -79,7 +79,7 @@ void playList ::ShowAll() const
 void playList ::play(int num)
 {
     int x;
-    for (num; num < currentSongIndex; i++)
+    for (num; num < currentSongIndex; num++)
     {
         x = num + 1;
         cout << PlayList[num] << endl;
