@@ -83,7 +83,7 @@ void playList::doublesize()
 {
     if (size == noOfSongs)
     {
-        size = size *= 2;
+        size *= 2;
     }
     else if (noOfSongs < (size / 2))
     {
