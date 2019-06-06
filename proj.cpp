@@ -7,8 +7,8 @@ class playList
 {
 private:
 
-    int size, noOfSongs, currentSongIndex;
-    Song *songs = new Song[size];
+    int size, noOfSongs, currentSongIndex, index;
+    Song *PlayList = new Song[size];
 
 public:
 
@@ -28,7 +28,9 @@ playList :: playList( )
 
 void playList :: AddSong ( const Song &s )
 {
-
+    PlayList[index] = s;
+    currentSongIndex = index;
+    index++;
 }
 
 bool playList :: DeleteSong ( const Song &s )
@@ -70,4 +72,5 @@ void playList:: ShowStatus ( ) const
 
 int main()
 {
+    cout << "Testing";
 }
