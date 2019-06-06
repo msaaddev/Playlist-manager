@@ -12,6 +12,7 @@ private:
 
 public:
     playList();
+    ~playList();
     void AddSong(const Song &s);
     bool DeleteSong(const Song &s);
     void ShowAll() const;
@@ -27,6 +28,11 @@ playList ::playList()
     {
         PlayList[i] = empty;
     }
+}
+
+playList::~playList()
+{
+    delete []PlayList;
 }
 
 void playList ::AddSong(const Song &s)
