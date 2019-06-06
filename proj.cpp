@@ -6,7 +6,7 @@ using namespace std;
 class playList
 {
 private:
-    int size, noOfSongs, currentSongIndex = 0, index;
+    int size, noOfSongs, currentSongIndex = 0;
     Song *PlayList = new Song[size];
     Song empty;
 
@@ -32,8 +32,6 @@ playList ::playList()
 void playList ::AddSong(const Song &s)
 {
     PlayList[currentSongIndex] = s;
-    index = currentSongIndex;
-    index++;
     currentSongIndex++;
 }
 
@@ -41,11 +39,11 @@ bool playList ::DeleteSong(const Song &s)
 {
     bool checkForDeletion = false;
     int i;
-    for (i = 0; i < index; i++)
+    for (i = 0; i < currentSongIndex; i++)
     {
         if (PlayList[i] == s)
         {
-            for (i; i < index; i++)
+            for (i; i < currentSongIndex; i++)
             {
                 PlayList[i] = PlayList[i + 1];
             }
@@ -56,12 +54,14 @@ bool playList ::DeleteSong(const Song &s)
     i -= 2;
     if (checkForDeletion)
     {
-        if ((currentSongIndex / 2) != i)
+        if ((size / 2) != i)
             size = i * 2;
-    }
-    if (PlayList[1] == empty)
-    {
-        size = 2;
+
+        if (PlayList[1] == empty)
+            size = 2;
+
+        if (currentSongIndex > size)
+            currentSongIndex = 0;
     }
 
     return checkForDeletion;
@@ -74,7 +74,6 @@ void playList ::ShowAll() const
     {
         cout << PlayList[i] << endl;
     }
-
 }
 
 void playList ::play(int num)
