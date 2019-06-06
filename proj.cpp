@@ -34,6 +34,7 @@ void playList ::AddSong(const Song &s)
     PlayList[currentSongIndex] = s;
     index = currentSongIndex;
     index++;
+    currentSongIndex++;
 }
 
 bool playList ::DeleteSong(const Song &s)
@@ -68,15 +69,26 @@ bool playList ::DeleteSong(const Song &s)
 
 void playList ::ShowAll() const
 {
-    for (int i = 0; i < size; i++)
+    cout << "   ************ Following are the songs that are currently in the playlist: ************   " << endl;
+    for (int i = 0; i < currentSongIndex; i++)
     {
-        cout << PlayList[i];
+        cout << PlayList[i] << endl;
     }
 
 }
 
 void playList ::play(int num)
 {
+    int x;
+    for (num; num < currentSongIndex; i++)
+    {
+        x = num + 1;
+        cout << PlayList[num] << endl;
+        if (x == currentSongIndex)
+        {
+            num = 0;
+        }
+    }
 }
 
 void playList::doublesize()
